@@ -10,30 +10,49 @@ Ozpost MultiQuote Shipping.
 
 == Description ==
 This module provides real time shipping quotes from Australia Post, TNT Australia, SmartSend, Transdirect, Couriers Please, E-Go, Fastway, StarTack and Skippy Post.
-Provides over 200 different shipping methods in total.   
 
+It Provides over 200 different shipping methods in total. You select the carriers and methods you wish to allow, and enter any optional P&H fees, and the module will provide the customer with quotes that are possible for any given order. 
+     
 == Installation ==
+<strong>Using the WordPress Plugins Menu</strong>
+<ul><li>Search for 'ozpost'/li>
+<li>Navigate to the 'Upload' area</li>
+<li>Click 'Install Now'</li>
+<li>Activate the plugin in the Plugin dashboard</li>
+</ul>
+
 <strong>Uploading in WordPress Dashboard </strong>
 <ul><li>Navigate to the 'Add New' in the plugins dashboard</li>
 <li>Navigate to the 'Upload' area</li>
-<li>Select woocommerce-shipping-ozpost_Vx.y.z.zip from your computer</li>
+<li>Select woocommerce_ozpost_Vx.y.z.zip from your computer</li>
 <li>Click 'Install Now'</li>
 <li>Activate the plugin in the Plugin dashboard</li>
 </ul>
 <strong>Using FTP</strong>
 <ul>
-<li>Download woocommerce-shipping-ozpost_Vx.y.z.zip</li>
-<li>Extract the woocommerce-shipping-ozpost_Vx.y.z.zip directory to your computer</li>
-<li>Upload the woocommerce-shipping-ozpost directory to the /wp-content/plugins/ directory</li>
+<li>Download woocommerce_ozpost_Vx.y.z.zip from http://ozpost.net.au</li>
+<li>Extract  woocommerce_ozpost_Vx.y.z.zip to your computer</li>
+<li>Upload the ozpost-multiquote directory to the /wp-content/plugins/ directory</li>
 <li>Activate the plugin in the Plugin dashboard</li>
 </ul>
+
+After installation you can configure the ozpost settings from the WooCommerce->Settings->Shipping menu. 
+
+Note: This module connects to a commercial/subscription service.  A 60 Day Free trial is *automatically* given from when the module is 1st installed.   
+
 == Upgrade Notice  ==
 V1.0.1 First public Release Upgrade Not applicable
 
 == Screenshots == 
 None 
 == Frequently Asked Questions ==
-None 
+Q. How do I mark an item as being 'Dangerous Goods'? 
+A.  Navigate to the product of interest (in admin). 
+    Click the 'Attributes' button. 
+`   Clich the 'Add' button. 
+    Enter a name of 'dg'  and give it a value of '1' 
+    The ozpost module will now detect this as a dangerous goods product that if added to a customers shopping cart will prevent quote for Airmail delivery.  
+   
 == Changelog ==
 = 1.0.1 =
 * Initial Public Release
