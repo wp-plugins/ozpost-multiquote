@@ -46,10 +46,11 @@ V1.0.1 First public Release Upgrade Not applicable
 == Screenshots == 
 None 
 == Frequently Asked Questions ==
-Q. How do I mark an item as being 'Dangerous Goods'? 
+Q. How do I mark an item as being 'Dangerous Goods'?
+ 
 A.  Navigate to the product of interest (in admin). 
     Click the 'Attributes' button. 
-`   Clich the 'Add' button. 
+`   Click the 'Add' button. 
     Enter a name of 'dg'  and give it a value of '1' 
     The ozpost module will now detect this as a dangerous goods product that if added to a customers shopping cart will prevent quote for Airmail delivery.  
    
