@@ -14,17 +14,17 @@ Provides over 200 different shipping methods in total.
 
 == Installation ==
 <strong>Uploading in WordPress Dashboard </strong>
-Navigate to the 'Add New' in the plugins dashboard<br>
-Navigate to the 'Upload' area<br>
-Select woocommerce-shipping-ozpost_Vx.y.z.zip from your computer<br>
-Click 'Install Now'<br>
-Activate the plugin in the Plugin dashboard<br>
+Navigate to the 'Add New' in the plugins dashboard\n
+Navigate to the 'Upload' area\n
+Select woocommerce-shipping-ozpost_Vx.y.z.zip from your computer\n
+Click 'Install Now'\n
+Activate the plugin in the Plugin dashboard\n
 
 <strong>Using FTP</strong>
-Download woocommerce-shipping-ozpost_Vx.y.z.zip<br>
-Extract the woocommerce-shipping-ozpost_Vx.y.z.zip directory to your computer<br>
-Upload the woocommerce-shipping-ozpost directory to the /wp-content/plugins/ directory<br>
-Activate the plugin in the Plugin dashboard<br>
+Download woocommerce-shipping-ozpost_Vx.y.z.zip\n
+Extract the woocommerce-shipping-ozpost_Vx.y.z.zip directory to your computer\n
+Upload the woocommerce-shipping-ozpost directory to the /wp-content/plugins/ directory\n
+Activate the plugin in the Plugin dashboard\n
 
 == Upgrade Notice  ==
 V1.0.1 First public Release Upgrade Not applicable
