@@ -13,18 +13,18 @@ This module provides real time shipping quotes from Australia Post, TNT Australi
 Provides over 200 different shipping methods in total.   
 
 == Installation ==
-<strong>Uploading in WordPress Dashboard </strong>\n
-Navigate to the 'Add New' in the plugins dashboard\n
-Navigate to the 'Upload' area\n
-Select woocommerce-shipping-ozpost_Vx.y.z.zip from your computer\n
-Click 'Install Now'\n
-Activate the plugin in the Plugin dashboard\n
+<strong>Uploading in WordPress Dashboard </strong>
+<li>Navigate to the 'Add New' in the plugins dashboard</li>
+<li>Navigate to the 'Upload' area</li>
+<li>Select woocommerce-shipping-ozpost_Vx.y.z.zip from your computer</li>
+<li>Click 'Install Now'</li>
+<li>Activate the plugin in the Plugin dashboard</li>
 
 <strong>Using FTP</strong>\n
-Download woocommerce-shipping-ozpost_Vx.y.z.zip\n
-Extract the woocommerce-shipping-ozpost_Vx.y.z.zip directory to your computer\n
-Upload the woocommerce-shipping-ozpost directory to the /wp-content/plugins/ directory\n
-Activate the plugin in the Plugin dashboard\n
+<li>Download woocommerce-shipping-ozpost_Vx.y.z.zip</li>
+<li>Extract the woocommerce-shipping-ozpost_Vx.y.z.zip directory to your computer</li>
+<li>Upload the woocommerce-shipping-ozpost directory to the /wp-content/plugins/ directory</li>
+<li>Activate the plugin in the Plugin dashboard</li>
 
 == Upgrade Notice  ==
 V1.0.1 First public Release Upgrade Not applicable
