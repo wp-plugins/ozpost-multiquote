@@ -15,7 +15,7 @@ It Provides over 200 different shipping methods in total. You select the carrier
      
 == Installation ==
 <strong>Using the WordPress Plugins Menu</strong>
-<ul><li>Search for 'ozpost'/li>
+<ul><li>Search for 'ozpost'</li>
 <li>Navigate to the 'Upload' area</li>
 <li>Click 'Install Now'</li>
 <li>Activate the plugin in the Plugin dashboard</li>
