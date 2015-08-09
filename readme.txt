@@ -1,5 +1,5 @@
-=== WooCommerce Ozpost Shipping by RodG/VCSWEB ===
-Contributors: Rod_G/VCSWEB
+=== WooCommerce Ozpost Shipping ===
+Contributors: VCSWEB
 Donate link: http:/shop.vcsweb.com/subscriptions/
 Tags: woocommerce shipping addon   
 Requires at least: 4.0.0
