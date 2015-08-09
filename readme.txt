@@ -2,7 +2,7 @@
 Contributors: Rod_G/VCSWEB
 Donate link: http:/shop.vcsweb.com/subscriptions/
 Tags: woocommerce shipping addon   
-Requires at least: 2.0.0
+Requires at least: 4.0.0
 Tested up to: 4.2.4
 Stable tag: 1.0.1
 License:GPLv2 or later
