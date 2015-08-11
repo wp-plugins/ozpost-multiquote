@@ -1,6 +1,6 @@
 === WooCommerce Ozpost Shipping ===
 Contributors: VCSWEB Rod_G
-Donate link: http:/shop.vcsweb.com/subscriptions/
+== Donate link: http://shop.vcsweb.com/subscriptions/
 Tags: woocommerce shipping, Australia Post, TNT Australia, SmartSend, Transdirect, Couriers Please, E-Go Couriers, Fastway Couriers, StarTack, Skippy Post   
 Requires at least: 4.0.0
 Tested up to: 4.2.4
