@@ -6,6 +6,9 @@ Requires at least: 4.0.0
 Tested up to: 4.2.4
 Stable tag: 1.0.1
 License:GPLv2 or later
+WC requires at least: 2.2
+WC tested up to: 2.4.3
+
 Real time shipping quotes from Australia Post, Startrack, TNT Australia, SmartSend, Transdirect, Couriers Please, E-Go, Fastway & Skippy Post. 
 
 == Description ==
