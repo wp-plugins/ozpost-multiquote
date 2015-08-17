@@ -7,7 +7,7 @@ Tested up to: 4.2.4
 Stable tag: 1.0.2
 License:GPLv2 or later
 WC requires at least: 2.2
-WC tested up to: 2.4.3
+WC tested up to: 2.4.4
 Provides real time shipping Quotes from Australia Post, Startrack, TNT, SmartSend and more..  
 
 == Description ==
@@ -61,5 +61,7 @@ A.  Navigate to the product of interest (in admin).
     The ozpost module will now detect this as a dangerous goods product that if added to a customers shopping cart will prevent quote for Airmail delivery.  
    
 == Changelog ==
+= 1.0.2 =
+* Code cleanup
 = 1.0.1 =
 * Initial Public Release
