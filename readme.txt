@@ -61,6 +61,8 @@ A.  Navigate to the product of interest (in admin).
     The ozpost module will now detect this as a dangerous goods product that if added to a customers shopping cart will prevent quote for Airmail delivery.  
    
 == Changelog ==
+= 1.0.3 =
+* Developement 
 = 1.0.2 =
 * Code cleanup
 = 1.0.1 =
