@@ -5,7 +5,7 @@ Plugin URI: http://ozpost.net.au/
 Description: Provides real time shipping quotes from Australia Post, TNT, TransDirect, SmartSend, StarTrack, Couriers Please and Others.. 
 Author: Rod Gasson
 Author URI: http://ozpost.net.au
-Version: 1.0.3 - Unstable development
+Version: 1.0.2
 Copyright: © 2015 VCSWEB (email : support@ozpost.net.au)
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -26,7 +26,7 @@ class WC_Shipping_Ozpost extends WC_Shipping_Method {
 
 public function __construct() {   
     $this->id = 'ozpost';
-    $this->version = '1.0.3';
+    $this->version = '1.0.2';
     $this->host = urlencode(preg_replace('/[^A-Za-z0-9\s\s+\.\'\"\-\&]/', '', get_option( 'blogname' )))  ; // Settings->General->Site Title 
     $this->method_title     = __( 'Ozpost', 'woocommerce-ozpost' );
     $this->title            = __( 'Ozpost MultiQuote', 'woocommerce-ozpost') ; 
