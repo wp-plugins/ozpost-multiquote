@@ -4,7 +4,7 @@ Donate link: http://shop.vcsweb.com/subscriptions/
 Tags: woocommerce shipping, Australia Post, TNT Australia, SmartSend, Transdirect, Couriers Please, E-Go Couriers, Fastway Couriers, StarTack, Skippy Post   
 Requires at least: 4.0.0
 Tested up to: 4.2.4
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License:GPLv2 or later
 WC requires at least: 2.2
 WC tested up to: 2.4.4
