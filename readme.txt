@@ -62,7 +62,7 @@ A.  Navigate to the product of interest (in admin).
    
 == Changelog ==
 = 1.0.3 =
-* Developement 
+* Development 
 = 1.0.2 =
 * Code cleanup
 = 1.0.1 =
