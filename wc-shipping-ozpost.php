@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: WooCommerce Ozpost Shipping Quotes 
+Plugin Name: ozpost-multiquote 
 Plugin URI: http://ozpost.net.au/
 Description: Provides real time shipping quotes from Australia Post, TNT, TransDirect, SmartSend, StarTrack, Couriers Please and Others.. 
 Author: Rod Gasson
