@@ -7,7 +7,7 @@ Tested up to: 4.3
 Stable tag: 1.0.2
 License:GPLv2 or later
 WC requires at least: 2.2
-WC tested up to: 2.4.4
+WC tested up to: 2.4.6
 Provides real time shipping Quotes from Australia Post, Startrack, TNT, SmartSend and more..  
 
 == Description ==
