@@ -1,4 +1,4 @@
-=== WooCommerce Ozpost Shipping ===
+=== ozpost-multiquote ===
 Contributors: Rod_G, VCSWEB 
 Donate link: http://shop.vcsweb.com/subscriptions/
 Tags: woocommerce shipping, Australia Post, TNT Australia, SmartSend, Transdirect, Couriers Please, E-Go Couriers, Fastway Couriers, StarTack, Skippy Post   
@@ -61,6 +61,11 @@ A.  Navigate to the product of interest (in admin).
     The ozpost module will now detect this as a dangerous goods product that if added to a customers shopping cart will prevent quote for Airmail delivery.  
    
 == Changelog ==
+= 1.0.3 =
+* Removed: internal code for latest version test (not needed for Woo)
+* Improved: output formatting
+* Added: Error checking for missing input data 
+* Bugfix: Storename being misset under certain conditions      
 = 1.0.2 =
 * Code cleanup
 = 1.0.1 =
