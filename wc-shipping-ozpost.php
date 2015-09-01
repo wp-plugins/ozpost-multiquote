@@ -831,7 +831,7 @@ $handlingFee = NULL  ; // nullify handling fee - We test to ensure its set for a
                         } //  end switch //
 
 // Valididy test // 
-  if ((( isset($handlingFee) && (float)($quote->cost) > 0)) || (($this->show_errors === "yes") && ((string)$quote->id ===  "Error"))) {  // valid quote or showing errors 
+ if ((( isset($handlingFee) && ( ( (float)($quote->cost) > 0) && ( (float)($quote->cost) !==  999.00 )  )    ) ) || (($this->show_errors === "yes") && ((string)$quote->id ===  "Error"))) {  // valid quote or showing errors 
 
 // Heavy Parcel surcharge      
   if((intval($xmlQuotes->information[0]->calculated_parcel_weight_kg)  >=  intval($this->hp_weight)) && ($this->show_errors !== "yes")) $handlingFee += (float)$this->hp_surcharge; //  Heavy parcel surcharge // 
