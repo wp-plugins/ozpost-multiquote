@@ -768,8 +768,8 @@ $handlingFee = NULL  ; // nullify handling fee - We test to ensure its set for a
                             break;
 
 ///////////// Startrack ///////////////////////
-                            case "STAexp": case "STAprm": $handlingFee = sta_handling; break;
-                            case "STAprm": case "STAprmi":case "STAexpi": $handlingFee = sta_handling + $this->ri_handling;
+                            case "STAexp": case "STAprm": $handlingFee = $this->sta_handling; break;
+                            case "STAprm": case "STAprmi":case "STAexpi": $handlingFee = $this->sta_handling + $this->ri_handling;
                              break;
                 // (Satchels) //
                             case "STA1k": case "STA3k": case "STA5k":
