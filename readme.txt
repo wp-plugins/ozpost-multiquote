@@ -62,7 +62,10 @@ A.  Navigate to the product of interest (in admin).
    
 == Changelog ==
 = 1.0.3 =
-* Development 
+* Removed: internal code for latest version test (not needed for Woo)
+* Improved: output formatting
+* Added: Error checking for missing input data 
+* Bugfix: Storename being misset under certain conditions      
 = 1.0.2 =
 * Code cleanup
 = 1.0.1 =
