@@ -1,11 +1,11 @@
 <?php
 /*
-Plugin Name: WooCommerce Ozpost Shipping Quotes 
+Plugin Name: ozpost-multiquote 
 Plugin URI: http://ozpost.net.au/
 Description: Provides real time shipping quotes from Australia Post, TNT, TransDirect, SmartSend, StarTrack, Couriers Please and Others.. 
 Author: Rod Gasson
 Author URI: http://ozpost.net.au
-Version: 1.0.2
+Version: 1.0.3
 Copyright: © 2015 VCSWEB (email : support@ozpost.net.au)
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -26,7 +26,7 @@ class WC_Shipping_Ozpost extends WC_Shipping_Method {
 
 public function __construct() {   
     $this->id = 'ozpost';
-    $this->version = '1.0.2';
+    $this->version = '1.0.3';
     $this->host = urlencode(preg_replace('/[^A-Za-z0-9\s\s+\.\'\"\-\&]/', '', get_option( 'blogname' )))  ; // Settings->General->Site Title 
     $this->method_title     = __( 'Ozpost', 'woocommerce-ozpost' );
     $this->title            = __( 'Ozpost MultiQuote', 'woocommerce-ozpost') ; 
@@ -101,24 +101,11 @@ return true;
 </script>
 
 <?php      
-$msg = "" ;
+//$msg = "" ;
+ //  Do Subscription expiration check.Disabling this prevents merchant feedback only. It has no effect on the actual subscription status  
 
- $latest_version = (intval(isset($_SESSION['versCheck']))) ? $_SESSION['versCheck']:$this->_get_from_ozpostnet("/postage.php?flags=get_latest_client_version_woo");
-
- if(($latest_version) && ($latest_version !== " ") && ($latest_version !== "") && ((substr($latest_version, 0, 7)) != "<error>"))  {
-    $_SESSION['versCheck'] = $latest_version ; 
-                if ((substr($latest_version, 0, 1) == "V") && ($latest_version > "V$this->version")) {
-                 $updavail = substr($latest_version, 1) ; 
-                 $msg = " (V$updavail update available)";
-                }  
-    } else { unset($_SESSION['versCheck']) ;}  
- ?>   
-<h2><?php _e('Ozpost MultiQuote v'. $this->version .$msg,'woocommerce-ozpost'); ?></h2>
-
-<?php  //  Do Subscription expiration check.Disabling this prevents merchant feedback only. It has no effect on the actual subscription status  
-
-$pc =  ($this->store_postcode == "") ?  $this->origin_postcode:$this->store_postcode ;
-$expires = (isset($_SESSION['ozpostExp'])) ? $_SESSION['ozpostExp']:$this->_get_from_ozpostnet("/postage.php?flags=expires&host=$this->host&fromcode=".$pc) ; 
+$storecode = (isset($this->store_postcode) && ($this->store_postcode !== "")) ? $this->store_postcode:$this->origin_postcode; 
+$expires = (isset($_SESSION['ozpostExp'])) ? $_SESSION['ozpostExp']:$this->_get_from_ozpostnet("/postage.php?flags=expires&host=$this->host&fromcode=".$storecode ) ; 
     if(($expires) && ($expires !== " ") && ($expires !== "") && ((substr($expires, 0, 7)) != "<error>"))  {
     $_SESSION['ozpostExp'] = $expires ; 
 ?><h3><?php     
@@ -147,6 +134,9 @@ $this->_generate_settings_html( $form_fields = array() );
 /////////////////////////////////////////////////////////////////////////////////////
 // FUNCTION calculate_shipping 
 public function calculate_shipping( $package = array() ) {
+ 
+ $this->host = urlencode(preg_replace('/[^A-Za-z0-9\s\s+\.\'\"\-\&]/', '', get_option( 'blogname' )))  ; // Settings->General->Site Title   
+ $storecode = (isset($this->store_postcode) && ($this->store_postcode !== "")) ? $this->store_postcode:$this->origin_postcode ;   
 
 $fromcode = $this->origin_postcode ; 
 $topcode = $package['destination']['postcode'] ;   
@@ -423,7 +413,7 @@ foreach ( $package['contents'] as $item => $values ) {
  
   if($dg == 1) { $vars .= "&dg=1" ;    
   wc_add_notice( __( 'Note: This order contains dangerous goods. Airmail is unavailable.', 'woocommerce-ozpost' ), 'notice' ) ;}
- $storecode = (isset($this->store_postcode) && ($this->store_postcode !== "")) ? $this->store_postcode:$fromcode; 
+
  
  $control_data = "&tare_weight=$this->tare_weight&restrain_dimensions=$this->restrain_dimensions&tare_dimensions=$this->tare_dimensions&enable_debug=$this->enable_debug"  ;   
  $control_data .= "&fromcode=$fromcode$Osub&destcode=$dcode$Dsub&flags=$flags&host=$this->host&storecode=$storecode&version=$this->version$vars$ef$deadline$maildays$leadtime$AllSat" ;
@@ -843,7 +833,7 @@ $handlingFee = NULL  ; // nullify handling fee - We test to ensure its set for a
 // Valididy test // 
   if ((( isset($handlingFee) && (float)($quote->cost) > 0)) || (($this->show_errors === "yes") && ((string)$quote->id ===  "Error"))) {  // valid quote or showing errors 
 
-// Heavy Parcel surcharch       
+// Heavy Parcel surcharge      
   if((intval($xmlQuotes->information[0]->calculated_parcel_weight_kg)  >=  intval($this->hp_weight)) && ($this->show_errors !== "yes")) $handlingFee += (float)$this->hp_surcharge; //  Heavy parcel surcharge // 
        
 $cost =  (floatval($quote->cost )) + $handlingFee ;  // set the total cost 
@@ -852,7 +842,7 @@ $cost =  (floatval($quote->cost )) + $handlingFee ;  // set the total cost
 
  if (($dest_country == "AU") && ($this->tax_status  !== "yes"))  $cost = $cost - ( $cost / ($taxrate + 1) ) ;  //  Exclude GST if needed 
 
- $carrier = '<strong>'. (string)$quote->carrier . "</strong><br>" . (string)$quote->description ; 
+ $carrier = '<strong>'. (string)$quote->carrier . " </strong><br>" . (string)$quote->description ; 
  
  $estimateddays = NULL ;
    if ($this->estimated_delivery_format !== "None") {
@@ -869,9 +859,10 @@ $details = NULL;
 
    /////////////////////////////////////////    
   // ***********   store it ************* //
-  //////////////////////////////////////////     
-   $rate  = array('id' => "ozpost.".$quote->id ,'label' => $carrier. $details ,'cost' => $cost);                                                        
-        $this->add_rate( $rate );   
+  //////////////////////////////////////////    
+ 
+   $rate = array('id' => "ozpost.".$quote->id ,'label' => $carrier. $details ,'cost' => $cost);                                                        
+        $this->add_rate($rate);   
          $valid = 1 ;
         }   // end  if ((isset($handlingFee)) && ($quote->cost> 0))
      } //if (in_array($quote->id, $allowed_methods))  no match
@@ -915,8 +906,8 @@ private function _no_data($dest_country) {
                 }
              if(!$skip)  {     
 // store it //
-        $rate  = array('id'  => 'ozpost.static','label' => $title,'cost'  => $cost[0]);                            
-        $this->add_rate( $rate );  
+        $rate = array('id'  => 'ozpost.static ','label' => $title,'cost'  => $cost[0]);                            
+        $this->add_rate($rate);  
      }
 } // ! FUNCTION _no_data
 
