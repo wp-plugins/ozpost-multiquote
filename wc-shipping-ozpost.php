@@ -693,7 +693,9 @@ $handlingFee = NULL  ; // nullify handling fee - We test to ensure its set for a
                             case "TNT75";
                             case "TNT76"; // Road Express //
                             case "TNT717B"; //Technology Express - Sensitive Express"//
-                            case "TNT73"; $handlingFee = $this->tnt_handling; break;
+                            case "TNT73"; 
+                                $handlingFee = $this->tnt_handling; 
+                                break;
 
 ///  Smart Send 
                             case "SMSCPR";case "SMSTNT9"; case "SMSTNT12"; case "SMSTNT5";
@@ -831,7 +833,8 @@ $handlingFee = NULL  ; // nullify handling fee - We test to ensure its set for a
                         } //  end switch //
 
 // Valididy test // 
-  if ((( isset($handlingFee) && (float)($quote->cost) > 0)) || (($this->show_errors === "yes") && ((string)$quote->id ===  "Error"))) {  // valid quote or showing errors 
+                    //    die ;
+  if ((( isset($handlingFee) && ( ( (float)($quote->cost) > 0) && ( (float)($quote->cost) !==  999.00 )  )    ) ) || (($this->show_errors === "yes") && ((string)$quote->id ===  "Error"))) {  // valid quote or showing errors 
 
 // Heavy Parcel surcharge      
   if((intval($xmlQuotes->information[0]->calculated_parcel_weight_kg)  >=  intval($this->hp_weight)) && ($this->show_errors !== "yes")) $handlingFee += (float)$this->hp_surcharge; //  Heavy parcel surcharge // 
