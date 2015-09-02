@@ -84,7 +84,7 @@ function admin_options() {
 ?> 
 <style>
 .ozpostHeadings{ color: blue ;   background-color: rgb(160, 216, 245); }  
-.ozpostHeadings:hover{ color: black; cursor: crosshair; }    
+.ozpostHeadings:hover{ color: black; cursor: pointer; }    
 p.ozpostHeadings { margin: 3px; padding: 1px ;padding-left: 10px ;width: 205px ;}  
 .form-table td { margin: 0; padding: 0; }
  th.titledesc { padding: 0px ; padding-top: 8px;} 

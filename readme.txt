@@ -64,7 +64,8 @@ A.  Navigate to the product of interest (in admin).
    
 == Changelog ==
 = 1.0.4 =
-* Bugfix: Initialised 'skop' variable
+* Bugfix: Initialised 'skip' variable
+* Update: Changed pointer type 
 
 = 1.0.3 =
 * Removed: internal code for latest version test (not needed for Woo)
