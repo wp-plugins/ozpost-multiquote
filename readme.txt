@@ -46,10 +46,12 @@ Note: This module connects to a commercial/subscription service.  A 60 Day Free 
 V1.0.1 First public Release Upgrade Not applicable
 
 == Screenshots == 
-1. Example Settings 
-2. Example Settings 
+1. Example Cart Output 
+2. Example Checkout Output 
 3. Example Settings 
 4. Example Settings 
+5. Example Settings 
+6. Example Settings 
 == Frequently Asked Questions ==
 Q. How do I mark an item as being 'Dangerous Goods'?
  
