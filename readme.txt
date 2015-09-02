@@ -43,13 +43,15 @@ After installation you can configure the ozpost settings from the WooCommerce->S
 Note: This module connects to a commercial/subscription service.  A 60 Day Free trial is *automatically* given from when the module is 1st installed.   
 
 == Upgrade Notice  ==
-V1.0.1 First public Release Upgrade Not applicable
+V1.0.1 First public Release 
 
 == Screenshots == 
-1. Example Settings 
-2. Example Settings 
+1. Example Cart Output 
+2. Example Checkout Output 
 3. Example Settings 
 4. Example Settings 
+5. Example Settings 
+6. Example Settings 
 == Frequently Asked Questions ==
 Q. How do I mark an item as being 'Dangerous Goods'?
  
@@ -61,6 +63,9 @@ A.  Navigate to the product of interest (in admin).
     The ozpost module will now detect this as a dangerous goods product that if added to a customers shopping cart will prevent quote for Airmail delivery.  
    
 == Changelog ==
+= 1.0.4 =
+* Bugfix: Initialised 'skop' variable
+
 = 1.0.3 =
 * Removed: internal code for latest version test (not needed for Woo)
 * Improved: output formatting

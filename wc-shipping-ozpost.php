@@ -877,7 +877,8 @@ $details = NULL;
 
 // FUNCTION _no_data
 private function _no_data($dest_country) {
- switch ($this->cost_on_error_method) {
+$skip = 0 ; 
+    switch ($this->cost_on_error_method) {
 
                     case "TBA":
                         $cost[0]  = 999;   $title = $this->tba_text ; break;
@@ -904,7 +905,7 @@ private function _no_data($dest_country) {
                         break;
                     default: $skip = 1 ;        
                 }
-             if(!$skip)  {     
+             if($skip == 0)  {     
 // store it //
         $rate = array('id'  => 'ozpost.static ','label' => $title,'cost'  => $cost[0]);                            
         $this->add_rate($rate);  
